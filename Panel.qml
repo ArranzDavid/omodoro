@@ -564,9 +564,14 @@ Panel {
             // message about pomodoro(either task, or just a slogan)
             Text {
               anchors.horizontalCenter: parent.horizontalCenter
+              horizontalAlignment: Text.AlignHCenter
+              width: parent.width - Style.space(16)
               text: root.getMessageForMode(root.currentMode)
               color: Qt.darker(root.bar.foreground, 1.3)
               font.family: root.bar.fontFamily
+              wrapMode: Text.WordWrap
+              maximumLineCount: 2
+              elide: Text.ElideRight
               font.pixelSize: Style.font.subtitle
               font.bold: true
             }
