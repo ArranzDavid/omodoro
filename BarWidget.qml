@@ -6,6 +6,9 @@ BarWidget {
   id: root
   moduleName: "pnkm0nk.omodoro"
 
+  readonly property var service: root.bar && root.bar.shell
+    ? root.bar.shell.serviceFor("pnkm0nk.omodoro") : null
+
   function injectPanel() {
     var target = panelLoader.item
     if (!target) return
@@ -37,9 +40,9 @@ BarWidget {
     if (panelLoader.item && panelLoader.item.close) panelLoader.item.close()
   }
 
-  function getIconForegroundColor(panelItem) {
-    if (!panelItem || !panelItem.timerRunning) return root.bar ? root.bar.barForeground : Color.foreground
-    switch (panelItem.currentMode) {
+  function getIconForegroundColor() {
+    if (!root.service || !root.service.timerRunning) return root.bar ? root.bar.barForeground : Color.foreground
+    switch (root.service.currentMode) {
       case "work": return root.bar ? root.bar.urgent : Color.urgent
       case "shortBreak":
       case "longBreak": return Color.accent
@@ -56,7 +59,7 @@ BarWidget {
     if (panelLoader.item) panelLoader.item.closeForPopoutSwitch()
   }
 
-  visible: panelLoader.item && panelLoader.item.label !== ""
+  visible: panelLoader.item && root.service && root.service.label !== ""
   implicitWidth: button.implicitWidth
   implicitHeight: button.implicitHeight
 
@@ -78,8 +81,8 @@ BarWidget {
     id: button
     anchors.fill: parent
     bar: root.bar
-    text: panelLoader.item ? panelLoader.item.label : ""
-    foreground: getIconForegroundColor(panelLoader.item)
+    text: root.service ? root.service.label : ""
+    foreground: root.getIconForegroundColor()
     slotSize: Style.bar.statusSlot
     tooltipText: "Omodoro"
 

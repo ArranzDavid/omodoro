@@ -4,6 +4,8 @@
 
 Pomodoro technique timer and task tracker [quickshell](https://quickshell.org/) plugin for [Omarchy](https://github.com/omarchy)
 
+[Plugin page on Omarchy plugin marketplace](https://omarchyplugins.com/plugin.html?id=pnkm0nk.omodoro)
+
 ## Features
 - Create goals for your pomodoro sessions and track progress
 - View your stats
