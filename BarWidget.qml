@@ -4,10 +4,10 @@ import qs.Ui
 
 BarWidget {
   id: root
-  moduleName: "pnkm0nk.omodoro"
+  moduleName: "david.omodoro"
 
   readonly property var service: root.bar && root.bar.shell
-    ? root.bar.shell.serviceFor("pnkm0nk.omodoro") : null
+    ? root.bar.shell.serviceFor("david.omodoro") : null
 
   function injectPanel() {
     var target = panelLoader.item

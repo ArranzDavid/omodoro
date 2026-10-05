@@ -4,7 +4,7 @@
 
 Pomodoro technique timer and task tracker [quickshell](https://quickshell.org/) plugin for [Omarchy](https://github.com/omarchy)
 
-[Plugin page on Omarchy plugin marketplace](https://omarchyplugins.com/plugin.html?id=pnkm0nk.omodoro)
+Fork de [Omodoro](https://github.com/Pnkm0nK/Omodoro) de pnkm0nk (GPL-3.0).
 
 ## Features
 - Create goals for your pomodoro sessions and track progress
@@ -18,19 +18,19 @@ Pomodoro technique timer and task tracker [quickshell](https://quickshell.org/) 
 ## Install
 
 ```sh
-omarchy plugin add https://github.com/Pnkm0nK/Omodoro --enable
+omarchy plugin add https://github.com/ArranzDavid/omodoro --enable
 ```
 
 Move it on the bar using `--section right`, `--section left` or `--section center`:
 
 ```sh
-omarchy bar move pnkm0nk.omodoro --section center
+omarchy bar move david.omodoro --section center
 ```
 
 ## Remove
 
 ```sh
-omarchy plugin remove pnkm0nk.omodoro
+omarchy plugin remove david.omodoro
 rm -rf ~/.local/state/omarchy/omodoro.json
 ```
 ## Shortcuts
@@ -49,6 +49,6 @@ When the panel is open and focused:
 ## Omarchy keybind
 If you would like to open the panel using a keyboard shortcut, you can add the following line to `$HOME/.config/hypr/bindings.lua`: 
 ```lua
-o.bind("SUPER + SHIFT + P (Or your preffered keybind)", "Omodoro", "omarchy shell -q shell toggle pnkm0nk.omodoro")
+o.bind("SUPER + SHIFT + P (Or your preffered keybind)", "Omodoro", "omarchy shell -q shell toggle david.omodoro")
 ```
 
